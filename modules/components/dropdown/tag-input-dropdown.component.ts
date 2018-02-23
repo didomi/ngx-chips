@@ -9,7 +9,7 @@ import {
     QueryList,
     TemplateRef,
     Type,
-    ViewChild,
+    ViewChild, Output,
 } from '@angular/core';
 
 // rx
@@ -114,6 +114,7 @@ export class TagInputDropdown {
      */
     @Input() public actionButtonText = new defaults().actionButtonText;
 
+    @Output() public onActionButtonClicked = new EventEmitter();
     /**
      * list of items that match the current value of the input (for autocomplete)
      * @name items

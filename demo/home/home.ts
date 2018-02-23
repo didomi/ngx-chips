@@ -5,7 +5,6 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { filter, map } from 'rxjs/operators';
-import { DropdownPositionOptions } from "../../modules/defaults";
 
 @Component({
     selector: 'app',
