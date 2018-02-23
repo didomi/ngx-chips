@@ -43,7 +43,7 @@ import { TagInputDropdown } from '../dropdown/tag-input-dropdown.component';
 import { TagComponent } from '../tag/tag.component';
 
 import { animations } from './animations';
-import { TagInputOptions } from '../../defaults';
+import { TagInputOptions, DropdownPositionOptions } from '../../defaults';
 
 // angular universal hacks
 /* tslint:disable-next-line */
@@ -722,8 +722,13 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
         return item[this.identifyBy];
     }
 
-    public getDroopdownStartPosition() {
-      return this.targetElement.nativeElement.getBoundingClientRect();
+    public getDropdownStartPosition(position: DropdownPositionOptions) {
+        switch(position) {
+            case DropdownPositionOptions.INITIAL:
+                return this.targetElement.nativeElement.getBoundingClientRect();
+            case DropdownPositionOptions.FROM_CURRENT_ELEMENT:
+                return this.inputForm.getElementPosition();
+        }
     }
 
     /**

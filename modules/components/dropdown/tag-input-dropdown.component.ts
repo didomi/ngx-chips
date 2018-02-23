@@ -103,6 +103,18 @@ export class TagInputDropdown {
     @Input() public keepOpen = new defaults().keepOpen;
 
     /**
+     * @name position
+     * @type {DropdownPositionOptions}
+     */
+    @Input() public position = new defaults().position;
+
+    /**
+     * @name actionButtonText
+     * @type {string}
+     */
+    @Input() public actionButtonText = new defaults().actionButtonText;
+
+    /**
      * list of items that match the current value of the input (for autocomplete)
      * @name items
      */
@@ -297,7 +309,7 @@ export class TagInputDropdown {
      * @name calculatePosition
      */
     private calculatePosition(): ClientRect {
-        return this.tagInput.getDroopdownStartPosition();
+        return this.tagInput.getDropdownStartPosition(this.position);
     }
 
     /**
