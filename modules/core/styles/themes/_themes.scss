@@ -6,9 +6,22 @@
 @import "_dark-theme.scss";
 @import "_bootstrap-theme.scss";
 @import "_bootstrap3-info-theme.scss";
+@import "default-dropdown-theme";
 
 .ng2-tag-input {
     @include tag-input-theme($default-theme);
+}
+
+/deep/ .ng2-dropdown-menu {
+    @include dropdown-menu($default-dropdown-theme);
+}
+
+.dropdown-bottom-button {
+    @include dropdown-bottom-button($default-dropdown-bottom-button-theme);
+}
+
+.dropdown-bottom-button {
+    @include dropdown-bottom-text($default-dropdown-bottom-text-theme);
 }
 
 .minimal.ng2-tag-input {

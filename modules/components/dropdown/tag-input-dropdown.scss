@@ -1,21 +1,2 @@
-/deep/ .ng2-dropdown-menu {
-  width: 388px !important;
-  padding: 0 !important;
-  border: 1px solid #359cbf;
-}
-
-.dropdown-bottom-button {
-  height: 30px;
-  border-top: 1px solid #359cbf;
-
-  display: flex;
-  align-items: center;
-}
-
-.dropdown-bottom-text {
-  font-size: 14px;
-  font-weight: bold;
-  color: #359cbf;
-  padding-left: 15px;
-  cursor: pointer;
-}
+@import "../../core/styles/core/_core.scss";
+@import "../../core/styles/themes/_themes.scss";

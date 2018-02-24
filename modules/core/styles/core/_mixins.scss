@@ -159,3 +159,24 @@
         fill: map-get($theme, 'fill-focus');
     }
 }
+
+@mixin dropdown-menu($theme) {
+  width: map-get($theme, 'width');
+  height: map-get($theme, 'height');
+  border: map-get($theme, 'border');
+}
+
+@mixin dropdown-bottom-button($theme) {
+  height: map-get($theme, 'height');
+  border-top: map-get($theme, 'border-top');
+  display: map-get($theme, 'display');
+  align-items: map-get($theme, 'align-items');
+}
+
+@mixin dropdown-bottom-text($theme) {
+  font-size: map-get($theme, 'font-size');
+  font-weight: map-get($theme, 'font-weight');
+  padding-left: map-get($theme, 'padding-left');
+  cursor: map-get($theme, 'cursor');
+  color: map-get($theme, 'color');
+}
