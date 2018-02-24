@@ -15,7 +15,7 @@
                       [ngTemplateOutletContext]="{ item: item, index: index, last: last }">
             </ng-template>
         </ng2-menu-item>
-      <div (click)="onActionButtonClicked.emit($event)" class="dropdown-bottom-button">
+      <div *ngIf="actionButtonText" (click)="onActionButtonClicked.emit($event)" class="dropdown-bottom-button">
         <span class="dropdown-bottom-text">{{actionButtonText}}</span>
       </div>
     </ng2-dropdown-menu>

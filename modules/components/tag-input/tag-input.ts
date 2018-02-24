@@ -314,7 +314,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
   /**
    * @name targetElement
    */
-    @ViewChild('tagContainerCustom') public targetElement: ElementRef;
+    @ViewChild('tagsContainer') public targetElement: ElementRef;
 
     /**
      * @name selectedTag
@@ -722,7 +722,7 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
         return item[this.identifyBy];
     }
 
-    public getDropdownStartPosition(position: DropdownPositionOptions) {
+    public getDropdownPosition(position: DropdownPositionOptions) {
         switch(position) {
             case DropdownPositionOptions.INITIAL:
                 return this.targetElement.nativeElement.getBoundingClientRect();

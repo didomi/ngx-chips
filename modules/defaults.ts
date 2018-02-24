@@ -120,7 +120,7 @@ export const defaults = {
         keepOpen: true,
         matchingFn,
         position: DropdownPositionOptions.INITIAL,
-        actionButtonText: 'New secondary purpose'
+        actionButtonText: ''
     }
 };
 

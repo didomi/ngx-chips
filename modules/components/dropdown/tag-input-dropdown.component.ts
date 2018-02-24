@@ -310,7 +310,7 @@ export class TagInputDropdown {
      * @name calculatePosition
      */
     private calculatePosition(): ClientRect {
-        return this.tagInput.getDropdownStartPosition(this.position);
+        return this.tagInput.getDropdownPosition(this.position);
     }
 
     /**

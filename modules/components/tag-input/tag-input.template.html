@@ -16,7 +16,7 @@
      [class.ng2-tag-input--focused]="isInputFocused()">
 
   <!-- TAGS -->
-    <div #tagContainerCustom class="ng2-tags-container">
+    <div #tagsContainer class="ng2-tags-container">
         <tag *ngFor="let item of items; let i = index; trackBy: trackBy"
 
              (onSelect)="selectItem(item)"
