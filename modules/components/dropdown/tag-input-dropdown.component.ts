@@ -19,7 +19,7 @@ import { map, filter, first, debounceTime } from 'rxjs/operators';
 import { Ng2Dropdown, Ng2MenuItem } from 'ng2-material-dropdown';
 import { OptionsProvider } from '../../core/providers/options-provider';
 import { TagInputComponent } from '../tag-input/tag-input';
-import { TagInputDropdownOptions } from '../../defaults';
+import { TagInputDropdownOptions, DropdownPositionOptions } from '../../defaults';
 import { TagModel } from '../../core/accessor';
 
 const defaults: Type<TagInputDropdownOptions> = forwardRef(() => OptionsProvider.defaults.dropdown);
@@ -104,13 +104,11 @@ export class TagInputDropdown {
 
     /**
      * @name position
-     * @type {DropdownPositionOptions}
      */
     @Input() public position = new defaults().position;
 
     /**
      * @name actionButtonText
-     * @type {string}
      */
     @Input() public actionButtonText = new defaults().actionButtonText;
 
