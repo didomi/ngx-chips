@@ -9,7 +9,7 @@ import {
     QueryList,
     TemplateRef,
     Type,
-    ViewChild,
+    ViewChild, Output,
 } from '@angular/core';
 
 // rx
@@ -26,7 +26,8 @@ const defaults: Type<TagInputDropdownOptions> = forwardRef(() => OptionsProvider
 
 @Component({
     selector: 'tag-input-dropdown',
-    templateUrl: './tag-input-dropdown.template.html'
+    templateUrl: './tag-input-dropdown.template.html',
+    styleUrls: ['./tag-input-dropdown.scss']
 })
 export class TagInputDropdown {
     /**
@@ -101,6 +102,19 @@ export class TagInputDropdown {
      */
     @Input() public keepOpen = new defaults().keepOpen;
 
+    /**
+     * @name position
+     * @type {DropdownPositionOptions}
+     */
+    @Input() public position = new defaults().position;
+
+    /**
+     * @name actionButtonText
+     * @type {string}
+     */
+    @Input() public actionButtonText = new defaults().actionButtonText;
+
+    @Output() public onActionButtonClicked = new EventEmitter();
     /**
      * list of items that match the current value of the input (for autocomplete)
      * @name items
@@ -296,7 +310,7 @@ export class TagInputDropdown {
      * @name calculatePosition
      */
     private calculatePosition(): ClientRect {
-        return this.tagInput.inputForm.getElementPosition();
+        return this.tagInput.getDropdownPosition(this.position);
     }
 
     /**

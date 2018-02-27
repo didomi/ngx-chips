@@ -1,21 +1,21 @@
 // angular
 import {
-    Component,
-    forwardRef,
-    HostBinding,
-    Input,
-    Output,
-    EventEmitter,
-    Renderer2,
-    ViewChild,
-    ViewChildren,
-    ContentChildren,
-    ContentChild,
-    OnInit,
-    TemplateRef,
-    QueryList,
-    AfterViewInit,
-    Type
+  Component,
+  forwardRef,
+  HostBinding,
+  Input,
+  Output,
+  EventEmitter,
+  Renderer2,
+  ViewChild,
+  ViewChildren,
+  ContentChildren,
+  ContentChild,
+  OnInit,
+  TemplateRef,
+  QueryList,
+  AfterViewInit,
+  Type, ElementRef
 } from '@angular/core';
 
 import {
@@ -43,7 +43,7 @@ import { TagInputDropdown } from '../dropdown/tag-input-dropdown.component';
 import { TagComponent } from '../tag/tag.component';
 
 import { animations } from './animations';
-import { TagInputOptions } from '../../defaults';
+import { TagInputOptions, DropdownPositionOptions } from '../../defaults';
 
 // angular universal hacks
 /* tslint:disable-next-line */
@@ -310,6 +310,11 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      * @name inputForm
      */
     @ViewChild(TagInputForm) public inputForm: TagInputForm;
+
+  /**
+   * @name tagsContainer
+   */
+    @ViewChild('tagsContainer') public tagsContainer: ElementRef;
 
     /**
      * @name selectedTag
@@ -715,6 +720,15 @@ export class TagInputComponent extends TagInputAccessor implements OnInit, After
      */
     public trackBy(item: TagModel): string {
         return item[this.identifyBy];
+    }
+
+    public getDropdownPosition(position: DropdownPositionOptions) {
+        switch(position) {
+            case DropdownPositionOptions.INITIAL:
+                return this.tagsContainer.nativeElement.getBoundingClientRect();
+            case DropdownPositionOptions.FROM_CURRENT_ELEMENT:
+                return this.inputForm.getElementPosition();
+        }
     }
 
     /**

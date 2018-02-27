@@ -55,6 +55,18 @@ export interface TagInputDropdownOptions {
     limitItemsTo: number;
     keepOpen: boolean;
     matchingFn: (value: string, target: TagModel) => boolean;
+    position: DropdownPositionOptions;
+    actionButtonText: string;
+}
+
+/**
+ * Defines where dropdown showd be shown:
+ * INITIAL - under left border (fixed position)
+ * FROM_CURRENT_ELEMENT- under current chip (non-fixed position)
+ */
+export enum DropdownPositionOptions {
+    INITIAL = 'initial',
+    FROM_CURRENT_ELEMENT = 'fromCurrentElement'
 }
 
 export const defaults = {
@@ -106,7 +118,9 @@ export const defaults = {
         minimumTextLength: 1,
         limitItemsTo: Infinity,
         keepOpen: true,
-        matchingFn
+        matchingFn,
+        position: DropdownPositionOptions.INITIAL,
+        actionButtonText: ''
     }
 };
 
